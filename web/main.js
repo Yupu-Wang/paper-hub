@@ -13,7 +13,6 @@ const progress = document.getElementById("progress");
 const resultsEl = document.getElementById("results");
 const yearFilter = document.getElementById("year-filter");
 const searchEl = document.getElementById("search");
-const authorEl = document.getElementById("author-search");
 const sortEl = document.getElementById("sort");
 
 function setProgress() {
@@ -75,12 +74,11 @@ async function loadShards() {
 
 function triggerSearch() {
   const q = searchEl.value.trim();
-  const author = authorEl.value.trim();
   const confs = [...document.querySelectorAll("input[name=conf]:checked")].map(i => i.value);
   const years = [...document.querySelectorAll("input[name=year]:checked")].map(i => +i.value);
   const sort = sortEl.value;
   const hits = runSearch(state, {
-    q, author, confs, years, sort,
+    q, confs, years, sort,
     allYearsCount: state.yearsKnown.size,
   });
   renderResults(resultsEl, hits);
@@ -93,7 +91,6 @@ function debouncedSearch() {
 }
 
 searchEl.addEventListener("input", debouncedSearch);
-authorEl.addEventListener("input", debouncedSearch);
 sortEl.addEventListener("change", triggerSearch);
 document.querySelectorAll("input[name=conf]").forEach(i => i.addEventListener("change", triggerSearch));
 

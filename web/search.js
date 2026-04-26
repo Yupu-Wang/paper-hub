@@ -1,9 +1,8 @@
 export function runSearch(state, opts) {
-  const { q, author, confs, years, sort, allYearsCount } = opts;
-  const noQuery = !q && !author;
+  const { q, confs, years, sort, allYearsCount } = opts;
   const allConfs = confs.length === 3;
   const allYears = years.length === allYearsCount && allYearsCount > 0;
-  if (noQuery && allConfs && allYears) {
+  if (!q && allConfs && allYears) {
     return null;
   }
 
@@ -14,11 +13,8 @@ export function runSearch(state, opts) {
     candidates = state.papers.map(p => ({ ...p, score: 0 }));
   }
 
-  const authorLower = author.toLowerCase();
   const filtered = candidates.filter(p =>
-    confs.includes(p.conference) &&
-    years.includes(p.year) &&
-    (!author || p.authors.some(a => a.toLowerCase().includes(authorLower)))
+    confs.includes(p.conference) && years.includes(p.year)
   );
 
   if (sort === "year-desc") {
