@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-04-26T16:43:17+08:00",
+  "built_at": "2026-04-26T17:57:52+08:00",
   "shards": [
     {
       "conference": "ICLR",
@@ -7,6 +7,13 @@
       "count": 3703,
       "file": "shards/iclr-2025.a23743.json",
       "size_bytes": 6796568
+    },
+    {
+      "conference": "ICLR",
+      "year": 2026,
+      "count": 5352,
+      "file": "shards/iclr-2026.e01db0.json",
+      "size_bytes": 10011583
     },
     {
       "conference": "ICML",
