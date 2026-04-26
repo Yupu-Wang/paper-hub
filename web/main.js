@@ -80,6 +80,7 @@ function triggerSearch() {
   const hits = runSearch(state, {
     q, confs, years, sort,
     allYearsCount: state.yearsKnown.size,
+    allConfsCount: document.querySelectorAll("input[name=conf]").length,
   });
   renderResults(resultsEl, hits);
 }

@@ -1,6 +1,6 @@
 export function runSearch(state, opts) {
-  const { q, confs, years, sort, allYearsCount } = opts;
-  const allConfs = confs.length === 3;
+  const { q, confs, years, sort, allYearsCount, allConfsCount } = opts;
+  const allConfs = confs.length === allConfsCount;
   const allYears = years.length === allYearsCount && allYearsCount > 0;
   if (!q && allConfs && allYears) {
     return null;

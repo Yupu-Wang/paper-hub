@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-04-26T17:57:52+08:00",
+  "built_at": "2026-04-26T18:56:06+08:00",
   "shards": [
     {
       "conference": "ICLR",
@@ -21,6 +21,13 @@
       "count": 3257,
       "file": "shards/icml-2025.191242.json",
       "size_bytes": 5462893
+    },
+    {
+      "conference": "NDSS",
+      "year": 2026,
+      "count": 265,
+      "file": "shards/ndss-2026.f73a53.json",
+      "size_bytes": 550487
     },
     {
       "conference": "NeurIPS",
