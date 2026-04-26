@@ -10,8 +10,9 @@
 
 Index every accepted paper from selected ML conferences and let you search them by keyword, author, conference, year, and presentation type — all in your browser, with no backend.
 
-**Currently indexed:** 12,246 papers
+**Currently indexed:** 17,598 papers
 - ICLR 2025 — 3,703 papers
+- ICLR 2026 — 5,352 papers
 - ICML 2025 — 3,257 papers
 - NeurIPS 2025 — 5,286 papers
 
