@@ -92,6 +92,13 @@ function debouncedSearch() {
 
 searchEl.addEventListener("input", debouncedSearch);
 sortEl.addEventListener("change", triggerSearch);
+document.querySelectorAll("#quick-keywords button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    searchEl.value = btn.dataset.q;
+    triggerSearch();
+    searchEl.focus();
+  });
+});
 document.querySelectorAll("input[name=conf]").forEach(i => i.addEventListener("change", triggerSearch));
 
 loadShards();
