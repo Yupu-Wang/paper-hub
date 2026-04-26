@@ -37,8 +37,6 @@ jobs:
           ls -la _site/
           ls -la _site/data/
       - uses: actions/configure-pages@v4
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
