@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paper Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Paper Hub</h1>
+    <div id="progress">加载中…</div>
+  </header>
+  <main>
+    <aside id="sidebar">
+      <input id="search" type="search" placeholder="关键词搜索（标题/摘要/作者）" autofocus />
+      <fieldset>
+        <legend>会议</legend>
+        <label><input type="checkbox" name="conf" value="ICLR" checked> ICLR</label>
+        <label><input type="checkbox" name="conf" value="ICML" checked> ICML</label>
+        <label><input type="checkbox" name="conf" value="NeurIPS" checked> NeurIPS</label>
+      </fieldset>
+      <fieldset id="year-filter"><legend>年份</legend></fieldset>
+      <fieldset>
+        <legend>排序</legend>
+        <select id="sort">
+          <option value="relevance">相关度</option>
+          <option value="year-desc">年份新→旧</option>
+        </select>
+      </fieldset>
+      <input id="author-search" type="search" placeholder="作者名" />
+    </aside>
+    <section id="results">
+      <p class="hint">输入关键词或选择筛选条件</p>
+    </section>
+  </main>
+  <script src="lib/minisearch.min.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

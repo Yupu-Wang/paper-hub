@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+  color: #222;
+  background: #fafafa;
+}
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px; background: #1a1a2e; color: white;
+}
+header h1 { margin: 0; font-size: 20px; }
+#progress { font-size: 13px; opacity: 0.85; }
+main { display: flex; min-height: calc(100vh - 56px); }
+#sidebar {
+  width: 280px; padding: 16px; background: white; border-right: 1px solid #e0e0e0;
+  display: flex; flex-direction: column; gap: 14px;
+  position: sticky; top: 0; align-self: flex-start; max-height: 100vh; overflow-y: auto;
+}
+#sidebar input[type=search], #sidebar select {
+  width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;
+}
+fieldset { border: 1px solid #e0e0e0; border-radius: 4px; padding: 8px 12px; margin: 0; }
+fieldset legend { font-size: 13px; color: #666; padding: 0 4px; }
+fieldset label { display: block; font-size: 14px; padding: 2px 0; cursor: pointer; }
+#results { flex: 1; padding: 16px 24px; }
+#results ul { list-style: none; padding: 0; margin: 0; }
+#results li { margin-bottom: 12px; }
+#results li a {
+  display: block; padding: 14px 16px; background: white;
+  border: 1px solid #e0e0e0; border-radius: 6px;
+  color: inherit; text-decoration: none;
+}
+#results li a:hover { border-color: #4a90e2; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.title { font-weight: 600; font-size: 15px; margin-bottom: 4px; line-height: 1.4; }
+.meta { color: #888; font-size: 12px; }
+.authors { color: #555; font-size: 13px; margin: 4px 0; }
+.abstract { font-size: 13px; color: #444; line-height: 1.5; margin-top: 6px; }
+.hint { color: #888; padding: 24px 0; text-align: center; }
+.summary-bar { color: #666; font-size: 13px; margin-bottom: 12px; }

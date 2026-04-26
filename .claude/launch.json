@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "paper-hub",
+      "runtimeExecutable": "/opt/anaconda3/envs/paper-hub/bin/python",
+      "runtimeArgs": ["-m", "http.server", "--directory", "/Users/yupuwang/Documents/code/paper-hub/web", "8765"],
+      "port": 8765
+    }
+  ]
+}
