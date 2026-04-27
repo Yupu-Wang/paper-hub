@@ -1,7 +1,7 @@
 from typing import Literal
 from pydantic import BaseModel, Field
 
-Conference = Literal["ICLR", "ICML", "NeurIPS", "NDSS"]
+Conference = Literal["ICLR", "ICML", "NeurIPS", "NDSS", "AAAI"]
 Presentation = Literal["oral", "spotlight", "poster"]
 
 

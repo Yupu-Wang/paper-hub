@@ -1,6 +1,13 @@
 {
-  "built_at": "2026-04-26T18:56:06+08:00",
+  "built_at": "2026-04-27T11:11:15+08:00",
   "shards": [
+    {
+      "conference": "AAAI",
+      "year": 2026,
+      "count": 2375,
+      "file": "shards/aaai-2026.bff58d.json",
+      "size_bytes": 4215178
+    },
     {
       "conference": "ICLR",
       "year": 2025,
