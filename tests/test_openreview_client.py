@@ -1,5 +1,6 @@
 import pytest
-from scrapers.common.openreview_client import parse_presentation, is_accepted
+from scrapers.common import openreview_client
+from scrapers.common.openreview_client import parse_presentation, is_accepted, _client
 
 
 @pytest.mark.parametrize("decision,expected", [
@@ -34,3 +35,30 @@ def test_parse_presentation(decision, expected):
 ])
 def test_is_accepted(decision, expected):
     assert is_accepted(decision) == expected
+
+
+class _FakeOpenReviewClient:
+    def __init__(self, **kwargs):
+        self.kwargs = kwargs
+
+
+def test_client_is_anonymous_when_no_credentials_env(monkeypatch):
+    monkeypatch.delenv("OPENREVIEW_USERNAME", raising=False)
+    monkeypatch.delenv("OPENREVIEW_PASSWORD", raising=False)
+    monkeypatch.setattr(openreview_client.openreview.api, "OpenReviewClient", _FakeOpenReviewClient)
+
+    client = _client()
+
+    assert "username" not in client.kwargs
+    assert "password" not in client.kwargs
+
+
+def test_client_is_authenticated_when_credentials_env_set(monkeypatch):
+    monkeypatch.setenv("OPENREVIEW_USERNAME", "alice@example.com")
+    monkeypatch.setenv("OPENREVIEW_PASSWORD", "hunter2")
+    monkeypatch.setattr(openreview_client.openreview.api, "OpenReviewClient", _FakeOpenReviewClient)
+
+    client = _client()
+
+    assert client.kwargs["username"] == "alice@example.com"
+    assert client.kwargs["password"] == "hunter2"

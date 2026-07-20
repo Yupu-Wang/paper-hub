@@ -1,4 +1,5 @@
 from __future__ import annotations
+import os
 from typing import Iterator
 
 import openreview
@@ -35,6 +36,12 @@ def parse_presentation(decision: str | None) -> str | None:
 
 
 def _client() -> openreview.api.OpenReviewClient:
+    username = os.environ.get("OPENREVIEW_USERNAME")
+    password = os.environ.get("OPENREVIEW_PASSWORD")
+    if username and password:
+        return openreview.api.OpenReviewClient(
+            baseurl="https://api2.openreview.net", username=username, password=password
+        )
     return openreview.api.OpenReviewClient(baseurl="https://api2.openreview.net")
 
 
